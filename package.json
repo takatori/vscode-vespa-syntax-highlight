@@ -1,0 +1,25 @@
+{
+  "name": "vscode-vespa-syntax-highlight",
+  "displayName": "vscode-vespa-syntax-highlight",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "vespa-schema",
+      "aliases": ["vespa-schema", "vespa-schema"],
+      "extensions": [".sd"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "vespa-schema",
+      "scopeName": "source.vespa.schema",
+      "path": "./syntaxes/vespa-schema.tmLanguage.json"
+    }]
+  }
+}
