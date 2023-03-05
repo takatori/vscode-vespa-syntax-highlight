@@ -12,7 +12,7 @@
   "contributes": {
     "languages": [{
       "id": "vespa-schema",
-      "aliases": ["vespa-schema", "vespa-schema"],
+      "aliases": ["vespa", "schema"],
       "extensions": [".sd"],
       "configuration": "./language-configuration.json"
     }],
