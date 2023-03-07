@@ -9,40 +9,33 @@
 	"repository": {
 		"comments": {
 			"name": "comment.line.vespa-schema",
-			"begin": "#",
-			"end": "$\\n?",
-			"comment": "Line comments start with # sequence and end with the next newline sequence. A line comment is considered equivalent to a newline sequence", // TODO: fix
+			"begin": "(^[ \\t]+)?(\\#)",
+			"end": "(?=^)",
+			"comment": "Line comments start with # sequence and end with the next newline sequence. A line comment is considered equivalent to a newline sequence", 
 			"captures": {
-				"0": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.vespa-schema"
+				},
+				"2": {
 					"name": "punctuation.definition.comment.vespa-schema"
 				}
 			}
+		},
+		"schema": {			
+			"begin": "\\b(?:schema\\s)\\b([_[:alnum:]]*)",
+			"beginCaptures": {
+				"1": {
+					"name": "storage.type.schema.vespa-schema"
+				},
+				"2": {
+					"name": "storage.type.schema.vespa-schema"
+				}
+			},
+			"end": "(?<=})",
+			"patterns": [
+
+			]
 		}
-		// "schema": {
-		// 	"match": "\\bschema \\b",
-		// 	"patterns": [
-		// 		{
-		// 			"include": "#document"
-		// 		}
-		// 	]
-		// },
-		// "keywords": {
-		// 	"patterns": [{
-		// 		"name": "keyword.control.vespa-schema",
-		// 		"match": "\\b(if|while|for|return)\\b"
-		// 	}]
-		// },
-		// "strings": {
-		// 	"name": "string.quoted.double.vespa-schema",
-		// 	"begin": "\"",
-		// 	"end": "\"",
-		// 	"patterns": [
-		// 		{
-		// 			"name": "constant.character.escape.vespa-schema",
-		// 			"match": "\\\\."
-		// 		}
-		// 	]
-		// }
 	},
 	"scopeName": "source.vespa.schema"
 }
