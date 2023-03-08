@@ -22,7 +22,7 @@
 			}
 		},
 		"schema": {			
-			"begin": "\\b(?:schema\\s)\\b([_[:alnum:]]*)",
+			"begin": "\\b(?:schema)\\b\\s+([_[:alpha:]][_[:alnum:]]*)\\s*(?=\\{)",
 			"beginCaptures": {
 				"1": {
 					"name": "storage.type.schema.vespa-schema"
