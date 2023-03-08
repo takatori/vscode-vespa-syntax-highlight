@@ -4,6 +4,9 @@
 	"patterns": [
 		{
 			"include": "#comments"
+		},
+		{
+			"include": "#schema"
 		}
 	],
 	"repository": {
@@ -22,12 +25,9 @@
 			}
 		},
 		"schema": {			
-			"begin": "\\b(?:schema)\\b\\s+([_[:alpha:]][_[:alnum:]]*)\\s*(?=\\{)",
+			"begin": "\\b(?:schema)\\b\\s+([[:alpha:]_][[:alnum:]_]*)\\s*",
 			"beginCaptures": {
 				"1": {
-					"name": "storage.type.schema.vespa-schema"
-				},
-				"2": {
 					"name": "storage.type.schema.vespa-schema"
 				}
 			},
