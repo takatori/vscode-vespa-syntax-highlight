@@ -25,15 +25,53 @@
 			}
 		},
 		"schema": {			
-			"begin": "\\b(?:schema)\\b\\s+([[:alpha:]_][[:alnum:]_]*)\\s*",
+			"begin": "\\b(?:schema)\\b\\s+([[:alpha:]_][[:alnum:]_]*)\\s*\\b(?:\\sinherits)\\b?\\s+([[:alpha:]_][[:alnum:]_]*)?\\s*",
 			"beginCaptures": {
 				"1": {
-					"name": "storage.type.schema.vespa-schema"
+					"name": "entity.name.section.vespa.schema"
+				},
+				"2": {
+					"name": "entity.name.type.vespa.schema"
+				},
+				"3": {
+					"name": "entity.name.section.vespa.schema.inherits"
+				},
+				"4": {
+					"name": "entity.name.type.vespa.schema.inherits.name-list"
 				}
 			},
 			"end": "(?<=})",
 			"patterns": [
-
+				{
+					"include": "#document"
+				},
+				{
+					"include": "#field"
+				},
+				{
+					"include": "#fieldset"
+				},
+				{
+					"include": "#rank-profile"
+				},
+				{
+					"include": "#constant"
+				},
+				{
+					"include": "#onnx-model"
+				},
+				{
+					"include": "#raw-as-base64-in-summary"
+				},
+				{
+					"include": "#document-summary"
+				},
+				{
+					"include": "#annotation"
+				},
+				{
+					"include": "#import"
+				}
 			]
 		}
 	},
