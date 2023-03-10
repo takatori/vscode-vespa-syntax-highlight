@@ -73,6 +73,35 @@
 					"include": "#import"
 				}
 			]
+		},
+		"document": {
+			"begin": "\\b(?:document)\\b\\s+([[:alpha:]_][[:alnum:]_]*)\\s*\\b(?:\\sinherits)\\b?\\s+([[:alpha:]_][[:alnum:]_]*)?\\s*",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.section.vespa.schema"
+				},
+				"2": {
+					"name": "entity.name.type.vespa.schema"
+				},
+				"3": {
+					"name": "entity.name.section.vespa.schema.inherits"
+				},
+				"4": {
+					"name": "entity.name.type.vespa.schema.inherits.name-list"
+				}
+			},
+			"end": "(?<=})",
+			"patterns": [
+				{
+					"include": "#struct"
+				},
+				{
+					"include": "#field"
+				},
+				{
+					"include": "#compression"
+				}
+			]			
 		}
 	},
 	"scopeName": "source.vespa.schema"
