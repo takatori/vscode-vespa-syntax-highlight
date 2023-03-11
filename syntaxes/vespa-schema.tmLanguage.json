@@ -102,6 +102,20 @@
 					"include": "#compression"
 				}
 			]			
+		},
+		"struct": {
+			"begin":  "\\b(?:struct)\\b\\s+([[:alpha:]_][[:alnum:]_]*)\\s*",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.section.struct.vespa.schema"
+				}
+			},
+			"end": "(?<=})",
+			"patterns": [
+				{
+					"include": "#field"
+				}
+			]
 		}
 	},
 	"scopeName": "source.vespa.schema"
