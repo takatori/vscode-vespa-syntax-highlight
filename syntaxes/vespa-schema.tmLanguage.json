@@ -120,6 +120,31 @@
 				}
 			]
 		},
+		"field": {
+			"begin": "\\b(?:field)\\b\\s+([[:alpha:]_][[:alnum:]_]*)\\s+\\b(?:type)\\b\\s+(([[:alpha:]_][[:alnum:]_]*))",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.section.struct.vespa.schema",
+					"patterns": [
+						{
+							"include": "#name"
+						}
+					]
+				},
+				"2": {
+					"name": "entity.name.section.struct.vespa.schema",
+					"patterns": [
+						{
+							"include": "#type-name"
+						}
+					]
+				}
+			},
+			"end": "(?<=})",
+			"patterns": [
+
+			]
+		},
 		"name": {
 			"match": "\\b[[:alpha:]_][[:alnum:]_]*"
 		}
